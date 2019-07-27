@@ -1,11 +1,11 @@
-var createError = require("http-errors");
+import createError from "http-errors";
 import express, { Request, Response, NextFunction } from "express";
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+import path from "path";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+import indexRouter from "./routes/index";
+import usersRouter from "./routes/users";
 
 var app = express();
 
@@ -38,4 +38,4 @@ app.use(function(err: any, req: Request, res: Response, next: NextFunction) {
     res.render("error");
 });
 
-module.exports = app;
+export default app;
