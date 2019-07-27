@@ -10,7 +10,7 @@ import usersRouter from "./routes/users";
 var app = express();
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "jade");
 
 app.use(logger("dev"));
@@ -28,7 +28,7 @@ app.use(function(_req: Request, _res: Response, next: NextFunction) {
 });
 
 // error handler
-app.use(function(err: any, req: Request, res: Response, next: NextFunction) {
+app.use(function(err: any, req: Request, res: Response, _next: NextFunction) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get("env") === "development" ? err : {};
