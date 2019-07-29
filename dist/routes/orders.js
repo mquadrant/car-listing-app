@@ -25,8 +25,12 @@ router.post("/createOrder", async function(req, res, _next) {
   console.log(result);
   res.status(201).json({ data: result });
 });
-router.put("/removeOrder", async function(_req, _res, _next) {
+router.put("/removeOrder", async function(req, res, _next) {
   console.log("Got here to remove files");
+  console.log(req.body);
+  const result = await mongo_1.removeOrder(req.body);
+  console.log("Order was removed from database");
+  res.status(200).json({ data: result });
 });
 exports.default = router;
 //# sourceMappingURL=orders.js.map

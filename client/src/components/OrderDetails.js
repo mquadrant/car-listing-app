@@ -1,14 +1,22 @@
 import React, { useContext } from "react";
 import { OrderContext } from "../contexts/orderContext";
+import removeOrder from "../APIservice/removeOrder";
+import getOrders from "../APIservice/getOrders";
 
 function OrderDetails({ order }) {
   const { dispatch } = useContext(OrderContext);
   // console.log(order);
 
+  const handleOrderRemoval = async e => {
+    await removeOrder({ orderID: order._id });
+    await getOrders(dispatch);
+  };
+
   return (
     <li
+      id={order._id}
       style={{ margin: "5px", padding: "5px" }}
-      onClick={e => dispatch({ type: "REMOVE_ORDER", id: order.id })}
+      onClick={handleOrderRemoval}
     >
       <div className="title">{order.name}</div>
       <div className="noOfOrder">

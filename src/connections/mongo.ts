@@ -32,4 +32,11 @@ export async function createOrder(payload: any) {
   return order;
 }
 
+export async function removeOrder(payload: any) {
+  const result = await Order.deleteOne({ _id: payload.orderID });
+  console.log({ _id: payload.orderID });
+  console.log(result);
+  console.log("Order was removed from the database");
+}
+
 export default Order;

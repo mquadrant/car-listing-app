@@ -33,5 +33,12 @@ async function createOrder(payload) {
   return order;
 }
 exports.createOrder = createOrder;
+async function removeOrder(payload) {
+  const result = await Order.deleteOne({ _id: payload.orderID });
+  console.log({ _id: payload.orderID });
+  console.log(result);
+  console.log("Order was removed from the database");
+}
+exports.removeOrder = removeOrder;
 exports.default = Order;
 //# sourceMappingURL=mongo.js.map
