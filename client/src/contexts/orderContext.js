@@ -5,12 +5,7 @@ import getOrders from "../APIservice/getOrders";
 export const OrderContext = createContext();
 
 const OrderContextProvider = props => {
-  const [orders, dispatch] = useReducer(orderReducer, [
-    { name: "Emmanuel", noOfOrders: 2, id: "1" },
-    { name: "Cynthia", noOfOrders: 1, id: "2" },
-    { name: "Tolu", noOfOrders: 1, id: "3" },
-    { name: "Tega", noOfOrders: 1, id: "4" },
-  ]);
+  const [orders, dispatch] = useReducer(orderReducer, []);
 
   useEffect(() => {
     getOrders(dispatch);

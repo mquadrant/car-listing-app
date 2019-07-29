@@ -13,7 +13,7 @@ const path_1 = __importDefault(require("path"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const morgan_1 = __importDefault(require("morgan"));
 const fs_1 = __importDefault(require("fs"));
-const index_1 = __importDefault(require("./routes/index"));
+// import indexRouter from "./routes/index";
 const orders_1 = __importDefault(require("./routes/orders"));
 var app = express_1.default();
 // view engine setup
@@ -45,7 +45,7 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(cookie_parser_1.default());
 app.use(express_1.default.static(path_1.default.join(__dirname, "public")));
-app.use("/", index_1.default);
+// app.use("/api", indexRouter);
 app.use("/api/orders", orders_1.default);
 const clientDirectory = path_1.default.join(__dirname, "../", "client/build");
 if (

@@ -10,8 +10,8 @@ var router = express_1.default.Router();
 /* GET home page. */
 router.get("/", function(_req, res, _next) {
   console.log("lksndlksdnlskdnklsdnfk");
-  // res.render("index", { title: "Express" });
-  res.json({ message: "home" });
+  res.render("index", { title: "Express" });
+  //   res.json({ message: "home" });
 });
 exports.default = router;
 //# sourceMappingURL=index.js.map

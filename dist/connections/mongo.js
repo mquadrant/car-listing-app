@@ -7,10 +7,11 @@ var __importDefault =
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 mongoose_1.default
-  // .connect(
-  //     "mongodb+srv://emm:emm@cluster0-9jokw.gcp.mongodb.net/test?retryWrites=true&w=majority"
-  // )
-  .connect("mongodb://localhost/orders", { useNewUrlParser: true })
+  .connect(
+    "mongodb+srv://emm:emm@cluster0-9jokw.gcp.mongodb.net/fura?retryWrites=true&w=majority",
+    { useNewUrlParser: true }
+  )
+  //   .connect("mongodb://localhost/orders", { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB Atlas!"))
   .catch(err => console.error("Could not connect to MongoDB Atlas...", err));
 const orderSchema = new mongoose_1.default.Schema({

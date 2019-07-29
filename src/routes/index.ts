@@ -5,9 +5,9 @@ var router = express.Router();
 router.get("/", function(_req, res, _next) {
   console.log("lksndlksdnlskdnklsdnfk");
 
-  // res.render("index", { title: "Express" });
+  res.render("index", { title: "Express" });
 
-  res.json({ message: "home" });
+  //   res.json({ message: "home" });
 });
 
 export default router;

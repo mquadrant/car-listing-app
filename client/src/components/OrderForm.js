@@ -17,8 +17,8 @@ function OrderForm() {
       document.querySelector("#name").select();
       return;
     }
-    if (noOfOrders === 0) {
-      setErrors("You must order at least one bottle");
+    if (noOfOrders === 0 || parseInt(noOfOrders) !== parseFloat(noOfOrders)) {
+      setErrors("You must specify the number of bottles to be ordered");
       document.querySelector("#noOfOrders").focus();
       document.querySelector("#noOfOrders").select();
       return;
@@ -31,6 +31,11 @@ function OrderForm() {
 
     await addOrder(payload);
     await getOrders(dispatch);
+
+    setNoOfOrders(0);
+    setName("");
+    document.querySelector("#name").focus();
+    document.querySelector("#name").select();
   };
 
   const nameFieldHandler = e => {

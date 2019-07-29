@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 
 mongoose
-  // .connect(
-  //     "mongodb+srv://emm:emm@cluster0-9jokw.gcp.mongodb.net/test?retryWrites=true&w=majority"
-  // )
-  .connect("mongodb://localhost/orders", { useNewUrlParser: true })
+  .connect(process.env.MONGO_URI!, { useNewUrlParser: true })
+  //   .connect("mongodb://localhost/orders", { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB Atlas!"))
   .catch(err => console.error("Could not connect to MongoDB Atlas...", err));
 

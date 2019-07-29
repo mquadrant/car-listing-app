@@ -45,7 +45,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
+app.use("/api", indexRouter);
 app.use("/api/orders", ordersRouter);
 
 const clientDirectory = path.join(__dirname, "../", "client/build");
